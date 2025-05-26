@@ -1,0 +1,129 @@
+{
+    "id": 1,
+    "url": "https://demo.netbox.dev/api/dcim/devices/1/",
+    "display_url": "https://demo.netbox.dev/dcim/devices/1/",
+    "display": "dmi01-akron-rtr01",
+    "name": "dmi01-akron-rtr01",
+    "device_type": {
+        "id": 6,
+        "url": "https://demo.netbox.dev/api/dcim/device-types/6/",
+        "display": "ISR 1111-8P",
+        "manufacturer": {
+            "id": 3,
+            "url": "https://demo.netbox.dev/api/dcim/manufacturers/3/",
+            "display": "Cisco",
+            "name": "Cisco",
+            "slug": "cisco",
+            "description": ""
+        },
+        "model": "ISR 1111-8P",
+        "slug": "isr1111",
+        "description": ""
+    },
+    "role": {
+        "id": 1,
+        "url": "https://demo.netbox.dev/api/dcim/device-roles/1/",
+        "display": "Router",
+        "name": "Router",
+        "slug": "router",
+        "description": "",
+        "_depth": 0
+    },
+    "tenant": {
+        "id": 5,
+        "url": "https://demo.netbox.dev/api/tenancy/tenants/5/",
+        "display": "Dunder-Mifflin, Inc.",
+        "name": "Dunder-Mifflin, Inc.",
+        "slug": "dunder-mifflin",
+        "description": ""
+    },
+    "platform": {
+        "id": 1,
+        "url": "https://demo.netbox.dev/api/dcim/platforms/1/",
+        "display": "Cisco IOS",
+        "name": "Cisco IOS",
+        "slug": "cisco-ios",
+        "description": ""
+    },
+    "serial": "",
+    "asset_tag": null,
+    "site": {
+        "id": 2,
+        "url": "https://demo.netbox.dev/api/dcim/sites/2/",
+        "display": "DM-Akron",
+        "name": "DM-Akron",
+        "slug": "dm-akron",
+        "description": ""
+    },
+    "location": null,
+    "rack": {
+        "id": 1,
+        "url": "https://demo.netbox.dev/api/dcim/racks/1/",
+        "display": "Comms closet",
+        "name": "Comms closet",
+        "description": ""
+    },
+    "position": 4.0,
+    "face": {
+        "value": "front",
+        "label": "Front"
+    },
+    "latitude": null,
+    "longitude": null,
+    "parent_device": null,
+    "status": {
+        "value": "active",
+        "label": "Active"
+    },
+    "airflow": null,
+    "primary_ip": {
+        "id": 183,
+        "url": "https://demo.netbox.dev/api/ipam/ip-addresses/183/",
+        "display": "10.0.0.11/24",
+        "family": {
+            "value": 4,
+            "label": "IPv4"
+        },
+        "address": "10.0.0.11/24",
+        "description": ""
+    },
+    "primary_ip4": {
+        "id": 183,
+        "url": "https://demo.netbox.dev/api/ipam/ip-addresses/183/",
+        "display": "10.0.0.11/24",
+        "family": {
+            "value": 4,
+            "label": "IPv4"
+        },
+        "address": "10.0.0.11/24",
+        "description": ""
+    },
+    "primary_ip6": null,
+    "oob_ip": null,
+    "cluster": null,
+    "virtual_chassis": null,
+    "vc_position": null,
+    "vc_priority": null,
+    "description": "",
+    "comments": "",
+    "config_template": null,
+    "config_context": {},
+    "local_context_data": null,
+    "tags": [],
+    "custom_fields": {
+        "contract_end_date": null,
+        "contract_start_date": null
+    },
+    "created": "2020-12-20T00:00:00Z",
+    "last_updated": "2025-05-23T06:07:54.491285Z",
+    "console_port_count": 2,
+    "console_server_port_count": 0,
+    "power_port_count": 1,
+    "power_outlet_count": 0,
+    "interface_count": 14,
+    "front_port_count": 0,
+    "rear_port_count": 0,
+    "device_bay_count": 0,
+    "module_bay_count": 0,
+    "inventory_item_count": 0
+}

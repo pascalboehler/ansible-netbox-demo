@@ -1,0 +1,143 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 3,
+            "url": "https://demo.netbox.dev/api/dcim/interfaces/3/",
+            "display_url": "https://demo.netbox.dev/dcim/interfaces/3/",
+            "display": "GigabitEthernet0/1/0",
+            "device": {
+                "id": 1,
+                "url": "https://demo.netbox.dev/api/dcim/devices/1/",
+                "display": "dmi01-akron-rtr01",
+                "name": "dmi01-akron-rtr01",
+                "description": ""
+            },
+            "vdcs": [],
+            "module": null,
+            "name": "GigabitEthernet0/1/0",
+            "label": "",
+            "type": {
+                "value": "1000base-t",
+                "label": "1000BASE-T (1GE)"
+            },
+            "enabled": true,
+            "parent": null,
+            "bridge": null,
+            "lag": {
+                "id": 833,
+                "url": "https://demo.netbox.dev/api/dcim/interfaces/833/",
+                "display_url": "https://demo.netbox.dev/dcim/interfaces/833/",
+                "display": "Po1",
+                "device": {
+                    "id": 1,
+                    "url": "https://demo.netbox.dev/api/dcim/devices/1/",
+                    "display_url": "https://demo.netbox.dev/dcim/devices/1/",
+                    "display": "dmi01-akron-rtr01",
+                    "name": "dmi01-akron-rtr01"
+                },
+                "name": "Po1",
+                "cable": null,
+                "_occupied": false
+            },
+            "mtu": null,
+            "mac_address": null,
+            "primary_mac_address": null,
+            "mac_addresses": [],
+            "speed": null,
+            "duplex": null,
+            "wwn": null,
+            "mgmt_only": false,
+            "description": "",
+            "mode": null,
+            "rf_role": null,
+            "rf_channel": null,
+            "poe_mode": null,
+            "poe_type": null,
+            "rf_channel_frequency": null,
+            "rf_channel_width": null,
+            "tx_power": null,
+            "untagged_vlan": null,
+            "tagged_vlans": [],
+            "qinq_svlan": null,
+            "vlan_translation_policy": null,
+            "mark_connected": false,
+            "cable": {
+                "id": 35,
+                "url": "https://demo.netbox.dev/api/dcim/cables/35/",
+                "display": "#35",
+                "label": "",
+                "description": ""
+            },
+            "cable_end": "A",
+            "wireless_link": null,
+            "link_peers": [
+                {
+                    "id": 170,
+                    "url": "https://demo.netbox.dev/api/dcim/interfaces/170/",
+                    "display": "GigabitEthernet1/0/1",
+                    "device": {
+                        "id": 14,
+                        "url": "https://demo.netbox.dev/api/dcim/devices/14/",
+                        "display": "dmi01-akron-sw01",
+                        "name": "dmi01-akron-sw01",
+                        "description": ""
+                    },
+                    "name": "GigabitEthernet1/0/1",
+                    "description": "",
+                    "cable": {
+                        "id": 35,
+                        "url": "https://demo.netbox.dev/api/dcim/cables/35/",
+                        "display": "#35",
+                        "label": "",
+                        "description": ""
+                    },
+                    "_occupied": true
+                }
+            ],
+            "link_peers_type": "dcim.interface",
+            "wireless_lans": [],
+            "vrf": null,
+            "l2vpn_termination": null,
+            "connected_endpoints": [
+                {
+                    "id": 170,
+                    "url": "https://demo.netbox.dev/api/dcim/interfaces/170/",
+                    "display": "GigabitEthernet1/0/1",
+                    "device": {
+                        "id": 14,
+                        "url": "https://demo.netbox.dev/api/dcim/devices/14/",
+                        "display": "dmi01-akron-sw01",
+                        "name": "dmi01-akron-sw01",
+                        "description": ""
+                    },
+                    "name": "GigabitEthernet1/0/1",
+                    "description": "",
+                    "cable": {
+                        "id": 35,
+                        "url": "https://demo.netbox.dev/api/dcim/cables/35/",
+                        "display": "#35",
+                        "label": "",
+                        "description": ""
+                    },
+                    "_occupied": true
+                }
+            ],
+            "connected_endpoints_type": "dcim.interface",
+            "connected_endpoints_reachable": true,
+            "tags": [],
+            "custom_fields": {
+                "bitreceived": "0",
+                "bitsent": "0",
+                "interface_status": "0"
+            },
+            "created": "2021-04-14T00:00:00Z",
+            "last_updated": "2021-04-14T17:36:01.841000Z",
+            "count_ipaddresses": 0,
+            "count_fhrp_groups": 0,
+            "_occupied": true
+        }
+    ]
+}

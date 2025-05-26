@@ -1,0 +1,70 @@
+---
+- name: Netbox Data Collection Playbook
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    device_name: "dmi01-akron-rtr01"
+    interface_name: "GigabitEthernet0/1/0"
+
+  vars_files:
+    - ./vault.yml
+
+  tasks:
+    - name: query | get device connectivity information
+      uri:
+        method: Get
+        url: "{{ netbox_url }}/api/dcim/interfaces/?device={{ device_name }}&name={{ interface_name }}"
+        body_format: form-urlencoded
+        headers:
+          ContentType: application/json
+          Authorization: "Token {{ netbox_token }}"
+      register: output_interface
+
+    - name: store | set device ID
+      set_fact:
+        effected_device_id: "{{ output_interface.json.results[0].device.id }}"
+        effected_device_name: "{{ output_interface.json.results[0].device.display }}"
+        connected_device_id: "{{ output_interface.json.results[0].link_peers[0].device.id }}"
+        connected_device_port: "{{ output_interface.json.results[0].link_peers[0].name }}"
+    
+    - name: query | get device information for effected device
+      uri:
+        method: Get
+        url: "{{ netbox_url }}/api/dcim/devices/{{ effected_device_id }}"
+        body_format: form-urlencoded
+        headers:
+          ContentType: application/json
+          Authorization: "Token {{ netbox_token }}"
+      register: output_effected_device
+
+    - name: query | get device information for connected device
+      uri:
+        method: Get
+        url: "{{ netbox_url }}/api/dcim/devices/{{ connected_device_id }}"
+        body_format: form-urlencoded
+        headers:
+          ContentType: application/json
+          Authorization: "Token {{ netbox_token }}"
+      register: output_connected_device
+
+    - name: store | extract effected device information
+      set_fact:
+        effected_device_site: "{{ output_effected_device.json.site.display }}"
+        effected_device_rack: "{{ output_effected_device.json.rack.display }}"
+        effected_device_role: "{{ output_effected_device.json.role.display }}"
+
+    - name: store | extract connected device information
+      set_fact:
+        connected_device_name: "{{ output_connected_device.json.display }}"
+        connected_device_site: "{{ output_connected_device.json.site.display }}"
+        connected_device_rack: "{{ output_connected_device.json.rack.display }}"
+        connected_device_role: "{{ output_connected_device.json.role.display }}"
+        
+    - name: Gathered information effected device
+      debug:
+        msg: "The following information has been collected:; Name of effected device: {{ effected_device_name }}; ID of effected device: {{ effected_device_id }}; Effected physical port: {{ interface_name }}; Effected device site: {{ effected_device_site }}; Effected device rack: {{ effected_device_rack }}; Effected device role: {{ effected_device_role }}"
+
+    - name: Gathered information connected device
+      debug:
+        msg: "The following information has been collected:; Name of connected device: {{ connected_device_name }}; ID of connected device: {{ connected_device_id }}; Connected physical port: {{ connected_device_port }}; Connected device site: {{ connected_device_site }}; Connected device rack: {{ connected_device_rack }}; Connected device role: {{ connected_device_role }}"
